@@ -2,10 +2,10 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/data_structures")
-def DS_info():
-    return [
+#*data
+ds_info = [
         {
+            "id": 0,
             "name": "Array",
             "Linear": "yes",
             "Data_structure":"array",
@@ -17,6 +17,7 @@ def DS_info():
             },
         },
         {
+            "id": 1,
             "name": "Vector",
             "Linear": "yes",
             "Data_structure":"dynamic array",
@@ -28,6 +29,7 @@ def DS_info():
             },
         },
         {
+            "id": 2,
             "name": "List",
             "Linear": "yes",
             "Data_structure":"doubly linked list",
@@ -39,6 +41,7 @@ def DS_info():
             },
         },
         {
+            "id": 3,
             "name": "Stack",
             "Linear": "yes",
             "Data_structure":"stack",
@@ -50,6 +53,7 @@ def DS_info():
             },
         },
         {
+            "id": 4,
             "name": "Queue",
             "Linear": "yes",
             "Data_structure":"queue",
@@ -61,6 +65,7 @@ def DS_info():
             },
         },
         {
+            "id": 5,
             "name": "set",
             "Linear": "no",
             "Data_structure":"binary search tree",
@@ -73,6 +78,7 @@ def DS_info():
 
         },
         {
+            "id": 6,
             "name": "map",
             "Linear": "no",
             "Data_structure":"binary search tree",
@@ -84,6 +90,7 @@ def DS_info():
             },
         },
         {
+            "id": 7,
             "name": "Unordered_set",
             "Linear": "no",
             "Data_structure":"hash table",
@@ -95,6 +102,7 @@ def DS_info():
             },
         },
         {
+            "id": 8,
             "name": "Unordered_map",
             "Linear": "no",
             "Data_structure":"hash table",
@@ -106,3 +114,8 @@ def DS_info():
             },
         },
     ]
+
+#* query function
+@app.get("/data_stuctures")
+def read_name(id : int):
+    return ds_info[id]
