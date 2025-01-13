@@ -115,7 +115,13 @@ ds_info = [
         },
     ]
 
-#* query function
-@app.get("/data_stuctures")
-def read_name(id : int):
-    return ds_info[id]
+#* query parameter function
+@app.get("/data_structure/")
+def read_dsA():
+    return ds_info
+
+@app.get("/data_stuctures/{id}")
+def read_ds(id : int | None = None):
+    if id:
+        return ds_info[id]
+    return ds_info
