@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from pydantic import BaseModel
-from typing import Union, Dict
+from typing import Union, Dict, List
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -127,14 +127,13 @@ ds_info = [
     ]
 
 #* query parameter function
-@app.get("/data_structure/")
+@app.get("/data_structure/", response_model=List[data_struct])
 def read_All_DS():
     return ds_info
 
-@app.get("/data_structure/{id}")
+@app.get("/data_structure/{id}", response_model= data_struct)
 def read_DS(id : Union[int, None] = None ):
-    if id:
-        return ds_info[id]
+    return ds_info[id]
 
 if __name__ == "__api__":
     uvicorn.run(app,host="0.0.0.0",port=8000)
