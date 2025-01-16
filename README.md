@@ -4,11 +4,14 @@
 ### Practice:
 - API endpoints
 - FastAPI features
+- Using Pydantic
 
-## Q_AND_A.py
+## QA.py
 ### Practice:
 - CRUD Operations
-- Connecting to a database
+- Using a database
+- Using SQLAlchemy
+- Using SQLite
 
 ## login.py
 ### Practice:
